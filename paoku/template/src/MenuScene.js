@@ -1,22 +1,41 @@
-var StartLayer = cc.Layer.extend({
-    ctor:function () {
+var MenuLayer = cc.Layer.extend({
+    ctor: function () {
+        this._super();
+    },
+    init: function(){
         this._super();
 
-        var size = cc.winSize;
+        var winsize = cc.director.getWinSize();
+        
+        var centerpos = cc.p(winsize.width >> 1, winsize.height >> 1);
 
-        var helloLabel = new cc.LabelTTF("您好啊，又见面了。", "", 38);
-        helloLabel.x = size.width / 2;
-        helloLabel.y = size.height / 2;
-        this.addChild(helloLabel);
+        // 背景
+        var spritebg = new cc.Sprite(s_images.helloBg);
+        spritebg.setPosition(centerpos);
+        this.addChild(spritebg);
 
-        return true;
+        // 创建菜单
+        cc.MenuItemFont.setFontSize(60);
+        var menuItemPlay = new cc.MenuItemSprite(
+            new cc.Sprite(s_images.start_n),
+            new cc.Sprite(s_images.start_s),
+            this.onPlay,
+            this);
+        var menu = new cc.Menu(menuItemPlay);
+        menu.setPosition(centerpos);
+        this.addChild(menu);
+    },
+    onPlay: function(){
+        var director = cc.Director.getInstance();
+        director.replaceScene(new PlayScene());
     }
 });
 
-var StartScene = cc.Scene.extend({
+var MenuScene = cc.Scene.extend({
     onEnter:function () {
         this._super();
-        var layer = new StartLayer();
+        var layer = new MenuLayer();
+        layer.init();
         this.addChild(layer);
     }
 });

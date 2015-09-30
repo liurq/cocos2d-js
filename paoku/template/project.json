@@ -10,7 +10,11 @@
     "modules" : ["cocos2d"],
 
     "jsList" : [
-        "src/resource.js",
-        "src/StartScene.js"
+        "src/resource.js",        
+        "src/MenuScene.js",
+        "src/bg.js",
+        "src/play.js",
+        "src/status.js",
+        "src/animation.js"
     ]
 }

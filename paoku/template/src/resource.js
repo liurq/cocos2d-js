@@ -1,20 +1,24 @@
-var s_HelloWorld = "HelloWorld.jpg";
-var s_CloseNormal = "CloseNormal.png";
-var s_CloseSelected = "CloseSelected.png";
+//image
+  
+//plist
 
-var g_resources = [
-    //image
-    s_HelloWorld,
-    s_CloseNormal,
-    s_CloseSelected
+//fnt
 
-    //plist
+//tmx
 
-    //fnt
+//bgm
 
-    //tmx
+//effect
 
-    //bgm
+var g_resources = [];
+var s_images = {
+	helloBg: "helloBg.png",
+	start_n: "start_n.png",
+	start_s: "start_s.png",
+	playBg: "playBg.png",
+	runner: "runner.png"
+}
 
-    //effect
-];
+for(var i in s_images){
+	g_resources.push(s_images[i]);
+}
