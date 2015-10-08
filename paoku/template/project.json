@@ -11,6 +11,7 @@
 
     "jsList" : [
         "src/resource.js",        
+        "src/Test.js",
         "src/MenuScene.js",
         "src/bg.js",
         "src/play.js",
