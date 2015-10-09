@@ -8,9 +8,10 @@ var PlayLayer = cc.Layer.extend({
     sushiSprites: null,
     ctor: function(){
         this._super();
-        cc.spriteFrameCache.addSpriteFrame(s_plist.sushi_list);
+
         this.sushiSprites = [];
-        this.addSushi();
+        cc.spriteFrameCache.addSpriteFrames(s_plist.sushi_list);
+        //this.addSushi();
         this.schedule(this.update,1,100,1);
         var size = cc.winSize;
 
