@@ -25,14 +25,22 @@ var SushiSprite = cc.Sprite.extend({
             onTouchBegan: function(touch,event){
                 var pos = touch.getLocation();
                 var target = event.getCurrentTarget();
-                target.removeTouchEventListenser();
+                if(cc.rectContainsPoint(target.getBoundingBox(),pos)){
 
-                //if(cc.rectContainsPoint(target.getBoundingBox(),pos)){
-                //    cc.log('touched');
-                //    return true;
-                //}
+                    cc.eventManager.removeListener(target.touchListener);
+                    target.stopAllActions();
+                    var ac = target.disappearAction;
+                    var seqAc = new cc.Sequence(ac,new cc.CallFunc(function(){
+                        target.getParent().addScore();
+                        target.removeFromParent()
+                    },target));
+
+                    target.runAction(seqAc);
+                    //cc.log('touched');
+                    return true;
+                }
                 return false;
-                console.log(target)
+                //console.log(target)
             }
         });
         cc.eventManager.addListener(this.touchListener,this);

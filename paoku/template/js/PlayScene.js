@@ -6,15 +6,19 @@
 var PlayLayer = cc.Layer.extend({
     bgSprite: null,
     sushiSprites: null,
+    timeout: 5,
+    score: 0,
     ctor: function(){
         this._super();
-
         this.sushiSprites = [];
         cc.spriteFrameCache.addSpriteFrames(s_plist.sushi_list);
         //this.addSushi();
         this.schedule(this.update,1,100,1);
+        this.schedule(this.timer,1,this.timeout,1);
         var size = cc.winSize;
 
+
+        // 添加背景
         this.bgSprite = new cc.Sprite(s_images.bg);
         this.bgSprite.attr({
             x: size.width >> 1,
@@ -22,12 +26,30 @@ var PlayLayer = cc.Layer.extend({
             rotation: 180
         });
         this.addChild(this.bgSprite);
+
+        // 添加得分与倒计时标签
+        this.scoreLabel = new cc.LabelTTF('score: '+this.score,'',20);
+        this.scoreLabel.attr({
+            x: size.width - 50,
+            y: size.height - 20
+        });
+        this.addChild(this.scoreLabel,4);
+
+        // timeout 60
+        this.timeoutLabel = new cc.LabelTTF(''+this.timeout,'',30);
+        this.timeoutLabel.attr({
+            x: 20,
+            y: size.height - 20
+        });
+        this.addChild(this.timeoutLabel,4);
+
+
         return true;
 
     },
     addSushi: function(){
         var sushi = new SushiSprite("#sushi_1n.png");
-        console.log(sushi)
+        //console.log(sushi)
         var size = cc.winSize;
         var x = sushi.width * .5 + size.width * .5 * cc.random0To1();
         sushi.attr({
@@ -37,12 +59,18 @@ var PlayLayer = cc.Layer.extend({
         this.addChild(sushi,2);
         this.sushiSprites.push(sushi);
 
-        var dorpAction = cc.MoveTo.create(4,cc.p(sushi.x,-30));
+        var dorpAction = new cc.MoveTo(4,cc.p(sushi.x,-50));
         sushi.runAction(dorpAction);
+    },
+    addScore: function(){
+        this.score += 1;
+        this.scoreLabel.setString('score:'+ this.score);
     },
     removeSushi: function(){
         for(var i = 0;i < this.sushiSprites.length; i += 1){
-            if(this.sushiSprites[i].y == 0){
+            //cc.log(this.sushiSprites[i].y)
+
+            if(Math.round(this.sushiSprites[i].y) == -50){
                 this.sushiSprites[i].removeFromParent();
                 this.sushiSprites[i] = undefined;
                 this.sushiSprites.splice(i,1);
@@ -53,6 +81,13 @@ var PlayLayer = cc.Layer.extend({
     update: function(){
         this.addSushi();
         this.removeSushi();
+    },
+    timer: function(){
+        if(this.timeout == 0){
+            cc.log('游戏结束');
+        }
+        this.timeout -= 1;
+        this.timeoutLabel.setString(''+this.timeout)
     }
 });
 
