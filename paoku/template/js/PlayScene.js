@@ -84,7 +84,36 @@ var PlayLayer = cc.Layer.extend({
     },
     timer: function(){
         if(this.timeout == 0){
-            cc.log('游戏结束');
+
+            var gameOver = new cc.LayerColor(cc.color(225,225,225,100));
+            var size = cc.winSize;
+            var titleLabel = new cc.LabelTTF('Game Over','',30);
+            titleLabel.attr({
+                x: size.width >> 1,
+                y: size.height >> 1
+            });
+            gameOver.addChild(titleLabel,15);
+
+            var TryAginItem = new cc.MenuItemFont(
+                'Try Again',
+                function(){
+                    var transition = cc.TransitionFade(1,new PlayScene(),cc.color(255,255,255,255));
+                    cc.director.runScene(new PlayScene());
+                },this);
+            TryAginItem.attr({
+                x: size.width >> 1,
+                y: (size.height >> 1) - 60,
+                anchorX:.5,
+                anchorY:.5
+            });
+            var menu = new cc.Menu(TryAginItem);
+            menu.x = 0;
+            menu.y = 0;
+            gameOver.addChild(menu,1);
+            this.getParent().addChild(gameOver);
+            this.unschedule(this.update);
+            this.unschedule(this.timer);
+            return;
         }
         this.timeout -= 1;
         this.timeoutLabel.setString(''+this.timeout)

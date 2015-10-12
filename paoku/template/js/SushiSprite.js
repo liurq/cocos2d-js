@@ -19,14 +19,18 @@ var SushiSprite = cc.Sprite.extend({
 
     },
     addTouchEventListenser: function(){
+        var that = this;
         this.touchListener = cc.EventListener.create({
             event: cc.EventListener.TOUCH_ONE_BY_ONE,
             swallowTouches: true,
             onTouchBegan: function(touch,event){
+
                 var pos = touch.getLocation();
                 var target = event.getCurrentTarget();
                 if(cc.rectContainsPoint(target.getBoundingBox(),pos)){
-
+                    if(that.getParent().timeout <= 0){
+                        return true;
+                    }
                     cc.eventManager.removeListener(target.touchListener);
                     target.stopAllActions();
                     var ac = target.disappearAction;
