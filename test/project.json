@@ -5,11 +5,11 @@
   "frameRate": 60,
   "id": "gameFirst",
   "renderMode": 1,
-  "engineDir": "../",
+  "engineDir": "./",
   "modules":[
     "cocos2d"
   ],
   "jsList": [
-
+    "js/resource.js"
   ]
 }
