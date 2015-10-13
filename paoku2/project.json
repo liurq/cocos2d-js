@@ -1,0 +1,26 @@
+{
+  "debugMode": 1,
+  "noCache": false,
+  "showFPS": true,
+  "frameRate": 60,
+  "id": "gameFirst",
+  "renderMode": 0,
+  "engineDir": "./",
+  "modules":[
+    "cocos2d","chipmunk"
+  ],
+  "jsList": [
+    "js/resource.js",
+    "js/loading.js",
+    "js/app.js",
+    "js/AnimationLayer.js",
+    "js/BackgroundLayer.js",
+    "js/PlayScene.js",
+    "js/StatusLayer.js",
+    "js/coin.js",
+    "js/rock.js",
+    "js/GameOver.js",
+    "js/SimpleRecognizer.js",
+    "js/globals.js"
+  ]
+}

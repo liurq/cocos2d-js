@@ -1,0 +1,17 @@
+{
+  "debugMode": 12,
+  "noCache": false,
+  "showFPS": true,
+  "frameRate": 60,
+  "id": "gameFirst",
+  "renderMode": 1,
+  "engineDir": "./",
+  "modules":[
+    "cocos2d"
+  ],
+  "jsList": [
+    "js/resource.js",
+    "js/loading.js",
+    "js/TestScene.js"
+  ]
+}
