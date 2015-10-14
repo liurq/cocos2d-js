@@ -1,0 +1,26 @@
+{
+    "project_type": "javascript",
+
+    "debugMode" : 1,
+    "showFPS" : true,
+    "frameRate" : 60,
+    "id" : "gameCanvas",
+    "renderMode" : 0,
+    "engineDir":"./",
+
+    "modules" : ["cocos2d", "extensions"],
+
+    "jsList" : [
+        "src/resource.js",
+        "src/config.js",
+        "src/MainMenu/MainMenu.js",
+        "src/MainMenu/Sprite/MenuItemSprite.js",
+        "src/MainMenu/Sprite/MenuSprite.js",
+
+        "src/GamePlay/GamePlayLayer.js",
+        "src/GamePlay/Sprite/TileSprite.js",
+
+        "src/GameOver/GameOverLayer.js"
+
+    ]
+}

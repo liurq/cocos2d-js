@@ -1,9 +1,9 @@
 {
-  "debugMode": 12,
+  "debugMode": 1,
   "noCache": false,
-  "showFPS": true,
+  "showFPS": false,
   "frameRate": 60,
-  "id": "gameFirst",
+  "id": "noteCanvas",
   "renderMode": 1,
   "engineDir": "./",
   "modules":[
@@ -12,6 +12,8 @@
   "jsList": [
     "js/resource.js",
     "js/loading.js",
-    "js/TestScene.js"
+    "js/index.js",
+    "js/book.js",
+    "js/list.js"
   ]
 }
