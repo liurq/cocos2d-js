@@ -1,0 +1,19 @@
+{
+  "debugMode": 1,
+  "noCache": false,
+  "showFPS": true,
+  "frameRate": 60,
+  "id": "noteCanvas",
+  "renderMode": 1,
+  "engineDir": "./",
+  "modules":[
+    "cocos2d"
+  ],
+  "jsList": [
+    "js/resource.js",
+    "js/loading.js",
+    "js/ListScene.js",
+    "test/MenuScene.js",
+    "test/UIScene.js"
+  ]
+}

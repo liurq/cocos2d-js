@@ -1,0 +1,18 @@
+{
+    "debugMode" : 1,
+    "noCache": false,
+    "showFPS" : true,
+    "frameRate" : 60,
+    "id" : "gameFirst",
+    "renderMode" : 1,
+    "engineDir":"./",
+
+    "modules" : ["cocos2d"],
+
+    "jsList" : [
+        "src/resource.js",
+        "src/MainScene.js",
+        "src/FlowerSprite.js",
+        "src/RobotSprite.js"
+    ]
+}

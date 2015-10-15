@@ -1,0 +1,18 @@
+{
+    "debugMode" : 1,
+    "noCache": false,
+    "showFPS" : true,
+    "frameRate" : 60,
+    "id" : "gameFirst",
+    "renderMode" : 1,
+    "engineDir":"../",
+
+    "modules" : ["cocos2d"],
+
+    "jsList" : [
+        "js/resource.js",
+        "js/StartScene.js",
+        "js/PlayScene.js",
+        "js/SushiSprite.js"
+    ]
+}
