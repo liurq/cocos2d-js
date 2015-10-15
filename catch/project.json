@@ -13,6 +13,7 @@
         "src/resource.js",
         "src/MainScene.js",
         "src/FlowerSprite.js",
-        "src/RobotSprite.js"
+        "src/RobotSprite.js",
+        "src/StatusLayer.js"
     ]
 }

@@ -29,8 +29,13 @@ var MainLayer = cc.Layer.extend({
             x: size.width * 0.5,
             y: robotSize.height * 0.5
         });
-
         this.bgSprite.addChild(this.robot);
+
+        // 添加花朵数量 
+        this.flower = new StatusLayer();        
+        this.bgSprite.addChild(this.flower);
+
+
         this.addChild(this.bgSprite);
     },
     // 添加花朵
@@ -69,7 +74,7 @@ var MainLayer = cc.Layer.extend({
     collidedUpdate: function () {
         for(var i = 0;i < this.flowerSprites.length; i += 1){
             var delStatus = this.robot.collide(this.flowerSprites[i]);
-            if(delStatus){ this.flowerSprites[i] = undefined;this.flowerSprites.splice(i, 1);}
+            if(delStatus){ this.flowerSprites[i] = undefined;this.flowerSprites.splice(i, 1);this.flower.addCoin(1);}
         }
     }
 

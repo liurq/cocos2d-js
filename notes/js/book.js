@@ -21,7 +21,6 @@ var BookSprite = cc.Sprite.extend({
                 var pos = touch.getLocation();
                 var target = event.getCurrentTarget();
                 if (cc.rectContainsPoint(target.getBoundingBox(), pos)) {
-
                     cc.eventManager.removeAllListeners();
                     that.zIndex = 2;
                     var moveTo = cc.moveTo(1, cc.p(size.width * .5, size.height * .5));

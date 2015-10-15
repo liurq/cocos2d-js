@@ -12,13 +12,6 @@ var RobotSprite = cc.Sprite.extend({
         this._super();
         //cc.log('onExit');
     },
-    // 触摸瞬间
-    //onTouchBegan: function (touch) {
-    //    cc.log(12311);
-    //    //var bool = this.containsTouchLocation(touch, event);
-    //
-    //    //return bool;
-    //},
     addTouchEventListenser: function () {
         var that = this;
         var size = cc.winSize;
@@ -45,6 +38,7 @@ var RobotSprite = cc.Sprite.extend({
         var distance = cc.pDistance(this.getPosition(),flowerObj.getPosition());
         if(distance < this.getContentSize().height * 0.5 + flowerObj.getContentSize().height * 0.5){
             flowerObj.removeFromParent();
+            
             return true;
         }
     }
