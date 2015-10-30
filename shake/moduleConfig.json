@@ -272,7 +272,7 @@
             "core", "kazmath", "shaders", "render-texture", "motion-streak", "node-grid",
             "clipping-nodes", "effects", "shape-nodes", "actions", "actions3d",
             "progress-timer", "transitions", "labels", "compression", "particle",
-            "text-input", "menus", "tilemap", "parallax", "audio"
+            "text-input", "menus", "tilemap", "parallax", "audio","custom"
         ],
 
         "ccbreader" : [
@@ -485,7 +485,8 @@
         "socketio" : [
             "external/socketio/socket.io.min.js"
         ],
-        "external" : ["box2d", "chipmunk", "socketio", "pluginx", "gaf"]
+        "external" : ["box2d", "chipmunk", "socketio", "pluginx", "gaf"],
+        "custom":["extensions/custom/ccAjax.js","extensions/custom/ccFileUpload.js","extensions/custom/ccExtend.js"]
     },
     "bootFile" : "CCBoot.js"
 }

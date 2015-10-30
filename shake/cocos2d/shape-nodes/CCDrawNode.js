@@ -380,6 +380,7 @@ cc.DrawNodeCanvas = cc.Node.extend(/** @lends cc.DrawNode# */{                  
      * @param {cc.Color} color
      */
     drawDot: function (pos, radius, color) {
+        cc.log(123)
         color = color || this.getDrawColor();
         if (color.a == null)
             color.a = 255;

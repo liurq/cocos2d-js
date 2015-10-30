@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>完毕</title>
+    <title>摇一摇</title>
     <link rel="icon" type="image/GIF" href="res/favicon.ico"/>
     <meta name="viewport" content="width=device-width,user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -18,12 +18,14 @@
             -khtml-user-select: none;
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
+        #fileId{position: absolute;opacity: 0;width: 0;height: 0;}
     </style>
     <script src="./CCBoot.js"></script>
     <script src="js/main.js"></script>
 </head>
-<body style="padding:0; margin: 0; background: #000;">
+<body style="padding:0; margin: 0;background: white;">
+<input type="file" name="fileupload" id="fileId" />
 <!--<script src="res/loading.js"></script>-->
-<canvas id="gameCanvas" width="640" height="1136"></canvas>
+    <canvas id="gameCanvas" width="640" height="1136"></canvas>
 </body>
 </html>

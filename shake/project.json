@@ -1,7 +1,7 @@
 {
     "debugMode" : 1,
     "noCache": false,
-    "showFPS" : true,
+    "showFPS" : false,
     "frameRate" : 60,
     "id" : "gameCanvas",
     "renderMode" : 0,
@@ -11,7 +11,19 @@
 
     "jsList" : [
         "js/resource.js",
-        "js/Index.js",
-        "js/ListScene.js"
+        "js/LoaderScene.js",
+        "js/Step1Scene.js",
+        "js/Step2Scene.js",
+        "js/Step3Scene.js",
+        "js/IndexScene.js",
+        "js/TestScene.js",
+        "js/ListScene.js",
+        "js/FriendItemSprite.js",
+        "js/HeartItemSprite.js",
+        "js/CardLayerSprite.js",
+        "js/PriZeListSprite.js",
+        "js/SexSprite.js",
+        "js/TagSprite.js",
+        "js/AudioSprite.js"
     ]
 }
